@@ -1,0 +1,9 @@
+{
+  "id": "craftyautostartstop",
+  "name": "CraftyAutoStartStop",
+  "version": "1.0.0",
+  "description": "Crafty Controller Auto Start/Stop Plugin for Velocity",
+  "authors": ["Ian"],
+  "dependencies": [],
+  "main": "com.ultrapeaks.craftyautostartstop.CraftyAutoStartStop"
+}
