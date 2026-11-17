@@ -35,8 +35,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 @Plugin(
-        id = "craftyautostartstop",
-        name = "CraftyAutoStartStop",
+        id = "craftyautostart",
+        name = "CraftyAutoStart",
         version = "1.0.0",
         description = "Crafty Controller Auto Start/Stop Plugin for Velocity",
         authors = {"NeverArchers"}
@@ -96,7 +96,7 @@ public class CraftyAutoStart {
                 .repeat(10, TimeUnit.SECONDS)
                 .schedule();
 
-        logger.info("CraftyAutoStartStop loaded with multi-server support!");
+        logger.info("CraftyAutoStart loaded with multi-server support!");
     }
 
     @SuppressWarnings("unchecked")
@@ -148,7 +148,7 @@ public class CraftyAutoStart {
             }
 
         } catch (Exception e) {
-            logger.error("Failed to load config.yml for CraftyAutoStartStop", e);
+            logger.error("Failed to load config.yml for CraftyAutoStart", e);
         }
     }
 
@@ -372,15 +372,15 @@ public class CraftyAutoStart {
             if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
                 loadConfig();
                 disableSSLChecksIfNeeded();
-                invocation.source().sendMessage(parseColor("&aCraftyAutoStartStop configuration reloaded successfully!", ""));
+                invocation.source().sendMessage(parseColor("&aCraftyAutoStart configuration reloaded successfully!", ""));
             } else {
-                invocation.source().sendMessage(parseColor("&cUsage: /craftyautostartstop reload", ""));
+                invocation.source().sendMessage(parseColor("&cUsage: /craftyautostart reload", ""));
             }
         }
 
         @Override
         public boolean hasPermission(Invocation invocation) {
-            return invocation.source().hasPermission("craftyautostartstop.admin");
+            return invocation.source().hasPermission("craftyautostart.admin");
         }
     }
 }
